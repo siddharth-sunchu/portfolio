@@ -1,0 +1,137 @@
+/* .navbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    width: 16rem;
+    background-color: #000;
+    border-right: 1px solid #333;
+    padding-top: 5rem;
+  }
+
+  .nav-content {
+    flex: 1;
+    padding: 0 1rem;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    color: #999;
+    text-decoration: none;
+  }
+
+  .nav-item:hover {
+    background-color: #111;
+    color: #fff;
+  }
+
+  .nav-item.active {
+    background-color: #222;
+    color: #cdff00;
+  }
+
+  .nav-item svg {
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-item:hover svg {
+    transform: scale(1.1);
+  }
+
+  .nav-text {
+    transition: color 0.3s ease;
+  }
+} */
+
+.navbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    width: 16rem;
+    background-color: #000;
+    border-right: 1px solid #333;
+    padding-top: 5rem;
+  }
+
+  .nav-content {
+    flex: 1;
+    padding: 0 1rem;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    color: #999;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #cdff00;
+    transform: translateX(-4px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-item:hover::before,
+  .nav-item.active::before {
+    transform: translateX(0);
+  }
+
+  .nav-item:hover {
+    background-color: rgba(205, 255, 0, 0.1);
+    color: #cdff00;
+  }
+
+  .nav-item.active {
+    background-color: rgba(205, 255, 0, 0.2);
+    color: #cdff00;
+  }
+
+  .nav-item svg {
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-item:hover svg,
+  .nav-item.active svg {
+    transform: scale(1.1);
+    color: #cdff00;
+  }
+
+  .nav-text {
+    transition: color 0.3s ease;
+  }
+
+  .nav-item:hover .nav-text,
+  .nav-item.active .nav-text {
+    color: #cdff00;
+  }
+}

@@ -1,0 +1,131 @@
+.recognition-section {
+  background-color: #000;
+  color: #fff;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #cdff00;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: #cdff00;
+  bottom: -8px;
+  left: 20%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.section-title:hover::after {
+  transform: scaleX(1);
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.recognition-item {
+  background-color: #111;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: flex-start;
+}
+
+.recognition-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(205, 255, 0, 0.1);
+  background-color: rgba(205, 255, 0, 0.05);
+}
+
+.recognition-icon {
+  color: #cdff00;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.recognition-content {
+  flex-grow: 1;
+}
+
+.recognition-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.recognition-year {
+  font-size: 0.9rem;
+  color: #cdff00;
+  margin-bottom: 0.5rem;
+}
+
+.recognition-description {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.recognition-link {
+  font-size: 0.9rem;
+  color: #cdff00;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.recognition-link:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 5px rgba(205, 255, 0, 0.5);
+}
+
+.recognition-item:hover .recognition-title,
+.recognition-item:hover .recognition-description {
+  color: #cdff00;
+  text-shadow: 0 0 5px rgba(205, 255, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recognition-item {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  .recognition-section {
+    padding: 3rem 1rem;
+  }
+
+  .recognition-grid {
+    grid-template-columns: 1fr;
+  }
+}

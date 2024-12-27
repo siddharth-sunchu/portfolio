@@ -1,0 +1,119 @@
+.membership-section {
+  background-color: #000;
+  color: #fff;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #cdff00;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: #cdff00;
+  bottom: -8px;
+  left: 20%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.section-title:hover::after {
+  transform: scaleX(1);
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.membership-card {
+  background-color: #111;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.membership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(205, 255, 0, 0.1);
+  background-color: rgba(205, 255, 0, 0.05);
+}
+
+.membership-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+  background-color: #000;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.membership-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #cdff00;
+}
+
+.membership-description {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.membership-year,
+.membership-org {
+  font-size: 0.8rem;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.membership-card:hover .membership-description,
+.membership-card:hover .membership-year,
+.membership-card:hover .membership-org {
+  color: #cdff00;
+}
+
+@keyframesmes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-card {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  .membership-section {
+    padding: 3rem 1rem;
+  }
+
+  .membership-grid {
+    grid-template-columns: 1fr;
+  }
+}

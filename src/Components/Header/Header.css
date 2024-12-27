@@ -1,0 +1,155 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-container {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+    .header-container {
+        margin-left: 16rem;
+        /* 64px for sidebar */
+    }
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+}
+
+.logo-highlight {
+    color: #CDFF00;
+}
+
+.logo-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgb(156 163 175);
+}
+
+/* Contact Section */
+.contact-section {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .contact-section {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+.contact-info {
+    color: rgb(156 163 175);
+    font-size: 0.875rem;
+}
+
+.contact-link {
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #CDFF00;
+}
+
+/* Connect Button */
+.connect-button {
+    border: 1px solid #CDFF00;
+    color: #CDFF00;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.connect-button:hover {
+    background-color: #CDFF00;
+    color: black;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+    display: block;
+    padding: 0.5rem;
+    color: rgb(156 163 175);
+    transition: color 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+    color: #CDFF00;
+}
+
+@media (min-width: 1024px) {
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+/* Menu Icon Animation */
+.menu-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.menu-icon-line {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: all 0.3s ease;
+}
+
+.menu-open .menu-icon-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-open .menu-icon-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .menu-icon-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Header Shadow on Scroll */
+.header-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation for header on scroll */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.header-animate {
+    animation: slideDown 0.3s ease-out forwards;
+}

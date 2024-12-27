@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  --primary-color: #2563eb;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --bg-light: #f9fafb;
+  --transition-base: all 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Progress bar */
+.progress-bar {
+  background: linear-gradient(to right, var(--primary-color), #60a5fa);
+  height: 3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transform-origin: 0%;
+}
+
+/* Section animations */
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children animations */
+.stagger-animate > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-animate.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-animate > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-animate > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-animate > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger-animate > *:nth-child(4) { transition-delay: 0.4s; }
+
+/* Sidebar navigation */
+.sidebar {
+  transition: var(--transition-base);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Position the sidebar absolutely within its parent */
+  top: 100%; /* Position it directly below the header */
+  left: 0;
+  width: 100%; /* Make it span the full width */
+  background-color: var(--bg-light); /* Adjust the background color */
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Add a border to separate from the header */
+  z-index: 10; /* Ensure it is above other content but below modals, etc. */
+  transition: var(--transition-base);
+}
+
+.nav-item {
+  position: relative;
+  transition: var(--transition-base);
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--primary-color);
+  transition: height 0.3s ease;
+}
+
+.nav-item:hover::before {
+  height: 100%;
+}
+
+.nav-item.active {
+  background-color: rgba(37, 99, 235, 0.1);
+  transform: translateX(5px);
+}
+
+/* Card animations */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Button animations */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-base);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.5s ease;
+}
+
+.btn:hover::after {
+  left: 100%;
+}
+
+/* Form input animations */
+.input-animated {
+  border: 2px solid transparent;
+  transition: var(--transition-base);
+}
+
+.input-animated:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Fade in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Slide in animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Scale animations */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+/* Mobile menu animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon animations */
+.icon-animate {
+  transition: transform 0.3s ease;
+}
+
+.icon-animate:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-animate {
+    transform: translateY(20px);
+  }
+  
+  .card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scroll-indicator.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.loading {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

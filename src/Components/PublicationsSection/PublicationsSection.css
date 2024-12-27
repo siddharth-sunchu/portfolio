@@ -1,0 +1,122 @@
+
+.publications-section {
+  background-color: #000;
+  color: #fff;
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #CDFF00;
+}
+
+.subsection-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: #CDFF00;
+}
+
+.publications-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.publication-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: #111;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.publication-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(205, 255, 0, 0.1);
+}
+
+.publication-icon {
+  color: #CDFF00;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.publication-content {
+  flex-grow: 1;
+}
+
+.publication-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.publication-title a {
+  color: #CDFF00;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.publication-title a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.publication-authors {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.25rem;
+}
+
+.publication-details,
+.publication-pages,
+.publication-date {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 0.25rem;
+}
+
+.expand-button {
+  background: none;
+  border: none;
+  color: #CDFF00;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.expand-button:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .publications-section {
+    padding: 3rem 1rem;
+  }
+
+  .publication-item {
+    flex-direction: column;
+  }
+
+  .publication-icon {
+    margin-bottom: 1rem;
+  }
+
+  .expand-button {
+    position: static;
+    margin-top: 1rem;
+  }
+}

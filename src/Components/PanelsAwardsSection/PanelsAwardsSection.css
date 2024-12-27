@@ -1,0 +1,155 @@
+.awards-panels-section {
+    min-height: 100vh;
+    padding: 5rem 0;
+    background-color: #f9fafb;
+}
+
+/* Card Animations */
+.awards-card,
+.panels-card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.awards-card:hover,
+.panels-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Content Animations */
+.content-item {
+    transition: all 0.2s ease-in-out;
+    border-left: 4px solid #CDFF00;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.content-item:hover {
+    background-color: rgba(205, 255, 0, 0.05);
+    padding-left: 1.25rem;
+}
+
+/* Award Badges */
+.award-badge {
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.award-badge:hover {
+    transform: scale(1.05);
+    background-color: #edf2f7;
+}
+
+/* Hackathon Links */
+.hackathon-link {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hackathon-link:hover {
+    background-color: rgba(205, 255, 0, 0.05);
+    padding-left: 1.5rem;
+}
+
+/* Section Title Animation */
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: #CDFF00;
+    bottom: -8px;
+    left: 20%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.section-title:hover::after {
+    transform: scaleX(1);
+}
+
+/* Card Icons */
+.section-icon {
+    color: #CDFF00;
+    transition: transform 0.3s ease-in-out;
+}
+
+.awards-card:hover .section-icon,
+.panels-card:hover .section-icon {
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .awards-panels-section {
+        padding: 3rem 1rem;
+    }
+
+    .award-badge {
+        padding: 0.5rem;
+    }
+
+    .content-item {
+        padding-left: 0.75rem;
+    }
+
+    .content-item:hover {
+        padding-left: 1rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Stagger children animations */
+.stagger-children>* {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.stagger-children>*:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stagger-children>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stagger-children>*:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stagger-children>*:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.stagger-children>*:nth-child(5) {
+    animation-delay: 0.5s;
+}
