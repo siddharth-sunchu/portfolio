@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.09ff4f19.css",
-    "main.js": "/static/js/main.cb6c0422.js",
+    "main.js": "/static/js/main.379acaff.js",
     "static/media/shalmali_photo.jpg": "/static/media/shalmali_photo.f2fb44926ccd117aed2c.jpg",
     "index.html": "/index.html",
     "main.09ff4f19.css.map": "/static/css/main.09ff4f19.css.map",
-    "main.cb6c0422.js.map": "/static/js/main.cb6c0422.js.map"
+    "main.379acaff.js.map": "/static/js/main.379acaff.js.map"
   },
   "entrypoints": [
     "static/css/main.09ff4f19.css",
-    "static/js/main.cb6c0422.js"
+    "static/js/main.379acaff.js"
   ]
 }
