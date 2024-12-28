@@ -1,6 +1,13 @@
 import React from "react";
 
 const Header = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('connect');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="fixed w-full z-50 top-0 start-0 border-b border-white/20 bg-black/90 backdrop-blur-sm">
       <div className="flex flex-wrap items-center justify-between mx-auto lg:ml-64 px-4 h-16">
@@ -26,6 +33,7 @@ const Header = () => {
             </a>
           </span>
           <button
+            onClick={scrollToContact}
             type="button"
             className="border border-[#CDFF00] text-[#CDFF00] py-2 px-6 hover:bg-[#CDFF00] hover:text-black text-sm font-semibold rounded-lg transition-all duration-300"
           >
