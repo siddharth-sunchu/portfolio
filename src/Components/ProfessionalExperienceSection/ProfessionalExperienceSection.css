@@ -69,20 +69,20 @@
 }
 
 .experience-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   color: #cdff00;
 }
 
 .experience-company {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #fff;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .experience-period {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #ccc;
   margin-bottom: 0.5rem;
 }

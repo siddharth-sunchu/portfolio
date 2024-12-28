@@ -96,7 +96,7 @@ const JudgeAndPanelSection = () => {
           <div className="experience-column">
             <h3 className="column-title">
               <Users className="column-icon" />
-              Conference Reviews
+              Peer Reviews
             </h3>
             {experienceData.conferences.map((conf, idx) => (
               <div key={idx} className="experience-item">

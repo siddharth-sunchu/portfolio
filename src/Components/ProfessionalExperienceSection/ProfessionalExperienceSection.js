@@ -48,7 +48,7 @@ const ProfessionalExperienceSection = () => {
                 <h3 className="experience-title">{exp.title}</h3>
                 <p className="experience-company">{exp.company}</p>
                 <p className="experience-period">{exp.period}</p>
-                <p className="experience-description">{exp.description}</p>
+                {/* <p className="experience-description">{exp.description}</p> */}
               </div>
             </div>
           ))}
