@@ -1,0 +1,146 @@
+.advisory-section {
+    background-color: #000;
+    color: #fff;
+    padding: 5rem 2rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #cdff00;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: #cdff00;
+    bottom: -8px;
+    left: 20%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.section-title:hover::after {
+    transform: scaleX(1);
+}
+
+.advisory-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.advisory-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #cdff00;
+}
+
+.advisory-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2.25rem;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: #cdff00;
+    border-radius: 50%;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+}
+
+.advisory-item:hover .timeline-marker {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(205, 255, 0, 0.5);
+}
+
+.advisory-content {
+    background-color: #111;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.advisory-item:hover .advisory-content {
+    transform: translateX(10px);
+    background-color: rgba(205, 255, 0, 0.05);
+}
+
+.advisory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.advisory-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #cdff00;
+    margin-right: 1rem;
+}
+
+.advisory-period {
+    font-size: 0.9rem;
+    color: #999;
+    white-space: nowrap;
+}
+
+.advisory-organization {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.advisory-description {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.advisory-location {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #999;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(205, 255, 0, 0.1);
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .advisory-section {
+        padding: 3rem 1rem;
+    }
+
+    .advisory-header {
+        flex-direction: column;
+    }
+
+    .advisory-period {
+        margin-top: 0.25rem;
+    }
+
+    .advisory-title {
+        margin-right: 0;
+    }
+}

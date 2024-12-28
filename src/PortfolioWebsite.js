@@ -4,13 +4,32 @@ import {
   X,
   Mail,
   ExternalLink,
-  Award,
-  Briefcase,
+  // Award,
+  // Briefcase,
   Book,
   Users,
   Globe,
   MessageCircle,
-  Star
+  Star,
+  Building2,
+  Network , 
+  UsersRound ,
+  Lightbulb, 
+  Gavel,
+  Building, 
+  FileText,
+  HardHat ,
+  Handshake,
+  UserCircle,        // for intro - represents personal profile
+  Brain,             // for expertise - represents knowledge/intelligence
+  Users2,            // for advisory - represents board/group leadership
+  Badge,             // for membership - represents official membership
+  Trophy,            // for recognitions - represents achievements
+  GanttChartSquare,  // for panels - represents organized evaluation
+  Award,             // for awards - keeping this as it's perfect
+  Briefcase,         // for professional - keeping this as it's perfect
+  BookText,          // for publications - more specific than just Book
+  Contact
 } from 'lucide-react';
 import {
   ExpertiseSection,
@@ -24,7 +43,8 @@ import {
   RecognitionSection,
   IntroductionSection,
   Navbar,
-  AnimatedSection
+  AnimatedSection,
+  AdvisoryBoardSection
 } from './Components';
 
 import './PortfolioWebsite.css';
@@ -55,17 +75,46 @@ const PortfolioWebsite = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // const sections = [
+  //   { id: 'intro', title: 'Introduction', icon: <UserCircle size={20} /> },
+  //   { id: 'expertise', title: 'Expert Insights', icon: <Brain size={20} /> },
+  //   { id: 'advisory', title: 'Advisory Board Member', icon: <Users2 size={20} /> },
+  //   { id: 'membership', title: 'Professional Membership', icon: <Building2    size={20} /> },
+  //   { id: 'recognitions', title: 'Recognitions', icon: <Trophy size={20} /> },
+  //   { id: 'panels', title: 'Judging & Panels', icon: <GanttChartSquare size={20} /> },
+  //   { id: 'awards', title: 'Awards', icon: <Award size={20} /> },
+  //   { id: 'professional', title: 'Professional Experience', icon: <Briefcase size={20} /> },
+  //   { id: 'publications', title: 'Publications', icon: <BookText size={20} /> },
+  //   { id: 'connect', title: "Let's Connect", icon: <Contact size={20} /> }
+  // ];
+
+  // const sections = [
+  //   { id: 'intro', title: 'Introduction', icon: <UserCircle size={20} /> },
+  //   { id: 'expertise', title: 'Expert Insights', icon: <Brain size={20} /> },
+  //   { id: 'advisory', title: 'Advisory Board Member', icon: <Users2 size={20} /> },
+  //   { id: 'membership', title: 'Professional Membership', icon: <Building2    size={20} /> },
+  //   { id: 'recognitions', title: 'Recognitions', icon: <Trophy size={20} /> },
+  //   { id: 'panels', title: 'Judging & Panels', icon: <GanttChartSquare size={20} /> },
+  //   { id: 'awards', title: 'Awards', icon: <Award size={20} /> },
+  //   { id: 'professional', title: 'Professional Experience', icon: <Briefcase size={20} /> },
+  //   { id: 'publications', title: 'Publications', icon: <BookText size={20} /> },
+  //   { id: 'connect', title: "Let's Connect", icon: <Contact size={20} /> }
+  // ];
+
+  // Chatgpt
   const sections = [
-    { id: 'intro', title: 'Introduction', icon: <Users size={20} /> },
-    { id: 'expertise', title: 'Expert Insights', icon: <Book size={20} /> },
-    { id: 'membership', title: 'Professional Membership', icon: <Award size={20} /> },
-    { id: 'recognitions', title: 'Recognitions', icon: <Star size={20} /> },
-    { id: 'panels', title: 'Judging & Panels', icon: <Users size={20} /> },
-    { id: 'awards', title: 'Awards', icon: <Award size={20} /> },
-    { id: 'professional', title: 'Professional Experience', icon: <Briefcase size={20} /> },
-    { id: 'publications', title: 'Publications', icon: <Book size={20} /> },
-    { id: 'connect', title: "Let's Connect", icon: <MessageCircle size={20} /> }
+    { id: 'intro', title: 'Introduction', icon: <UserCircle size={20} /> }, // Personal touch for introduction
+    { id: 'expertise', title: 'Expert Insights', icon: <Brain size={20} /> }, // Represents knowledge or insights
+    { id: 'advisory', title: 'Advisory Board Member', icon: <Users  size={20} /> }, // Professional involvement
+    { id: 'membership', title: 'Professional Membership', icon: <Handshake  size={20} /> }, // Represents community and network
+    { id: 'recognitions', title: 'Recognitions', icon: <Award size={20} /> }, // Best suited for achievements
+    { id: 'panels', title: 'Judging & Panels', icon: <Gavel size={20} /> }, // Judging/panel representation
+    { id: 'awards', title: 'Awards', icon: <Trophy size={20} /> }, // Represents winning and accomplishments
+    { id: 'professional', title: 'Professional Experience', icon: <Briefcase  size={20} /> }, // Corporate/professional work
+    { id: 'publications', title: 'Publications', icon: <FileText size={20} /> }, // Represents articles or documents
+    { id: 'connect', title: "Let's Connect", icon: <Mail size={20} /> } // Communication and connection
   ];
+  
 
   return (
     <>
@@ -111,6 +160,9 @@ const PortfolioWebsite = () => {
             </AnimatedSection>
             <AnimatedSection id="expertise" className="bg-black">
               <ExpertiseSection />
+            </AnimatedSection>
+            <AnimatedSection id="advisory" className="bg-black">
+              <AdvisoryBoardSection />
             </AnimatedSection>
             <AnimatedSection id="membership" className="bg-black">
               <MembershipSection />
