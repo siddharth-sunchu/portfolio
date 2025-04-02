@@ -109,7 +109,7 @@ const PortfolioWebsite = () => {
     { id: 'membership', title: 'Professional Membership', icon: <Handshake  size={20} /> }, // Represents community and network
     { id: 'recognitions', title: 'Recognitions', icon: <Award size={20} /> }, // Best suited for achievements
     { id: 'panels', title: 'Judging & Panels', icon: <Gavel size={20} /> }, // Judging/panel representation
-    { id: 'awards', title: 'Awards', icon: <Trophy size={20} /> }, // Represents winning and accomplishments
+    // { id: 'awards', title: 'Awards', icon: <Trophy size={20} /> }, // Represents winning and accomplishments
     { id: 'professional', title: 'Professional Experience', icon: <Briefcase  size={20} /> }, // Corporate/professional work
     { id: 'publications', title: 'Publications', icon: <FileText size={20} /> }, // Represents articles or documents
     { id: 'connect', title: "Let's Connect", icon: <Mail size={20} /> } // Communication and connection
@@ -173,9 +173,9 @@ const PortfolioWebsite = () => {
             <AnimatedSection id="panels" className="bg-black">
               <JudgeAndPanelSection />
             </AnimatedSection>
-            <AnimatedSection id="awards" className="bg-black">
+            {/* <AnimatedSection id="awards" className="bg-black">
               <AwardsSection />
-            </AnimatedSection>
+            </AnimatedSection> */}
             <AnimatedSection id="professional" className="bg-black">
               <ProfessionalExperienceSection />
             </AnimatedSection>
